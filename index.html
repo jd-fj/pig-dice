@@ -13,7 +13,7 @@
       <div id="start-info">
         <div class="row">
           <div class="col-md-6">
-            <form id="playerName" class="form-group">
+            <form id="playerInfo" class="form-group">
               <h4>Please put in your names:</h4>
               <div class="form-group">
                 <label for="player1">Player 1</label>
@@ -29,8 +29,29 @@
         </div>
       </div>
       <!-- game play stuff -->
-
+      <div id="game-content">
+        <!-- roll button -->
+        <div class="row">
+          <div class="col-md-12">
+            <button type="roll" id="roll">ROLL</button>
+            <button type="hold">HOLD</button>
+          </div>
+        </div>
+        <!-- Player1 stats -->
+        <div class="row">
+          <div class="col-md-6" id="player1-stats">
+            <p><span class="player1Output"></span></p>
+            <p>Player 1 score:<span class="player1-score"></span></p>
+            <p>Player 1 total:<span class="player1-total"></span></p>
+          </div>
+          <!-- Player2 stats -->
+          <div class="col-md-6" id=player2-stats>
+            <p><span class="player2Output"></span></p>
+            <p>Player 2 score:<span class="player2-score"></span></p>
+            <p>Player 2 total:<span class="player2-total"></span></p>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
 </html>
-  
