@@ -40,16 +40,15 @@ $(document).ready(function() {
     $(".player1Output").text(player1Name);
     $(".player2Output").text(player2Name);
     $("#playerInfo").hide();
-    console.log(player1)
-    console.log(player2)
+
 
   });
   $("#roll").click(function(event){
     event.preventDefault();
-
-    $(".roll-result").text(roll)
-    $(".player1-score").text(player1.roundScore);
-    $(".player1-total").text(player1.overallScore);
+// we want #roll.click to trigger player1.rolling();
+    $(".roll-result").text(player1.rolling());
+    // $(".player1-score").text(player1.roll());
+    // $(".player1-total").text(player1.roll());
   })
 
 });
