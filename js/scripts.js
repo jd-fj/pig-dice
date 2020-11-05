@@ -1,20 +1,26 @@
 //Business Logic 
-function Player (name, roll, roundScore, overallScore) {
+function Player (name) {
   this.name = name;
   this.roll = 0;
   this.roundScore = 0;
   this.overallScore = 0;
 }
 
-Player.prototype.roll = function() {
-  let dice = Math.floor((Math.random() * 7));
-  this.roll = this.roll + dice;
+Player.prototype.rolling = function() {
+  let dice = Math.floor((Math.random() * 6) + 1) ;
+  this.roll += dice ;
+  return this.roll ;
+}
+
+let player1 = new Player("player1");
+
+  // this.roll = this.roll + dice;
   // if (this.roll === 1) {
   //   this.roundScore = 0;
   // } else {
   //   this.roundScore += this.roll;
   // }
-}
+
 
 // this one works
 // function rollDice () {
@@ -34,12 +40,16 @@ $(document).ready(function() {
     $(".player1Output").text(player1Name);
     $(".player2Output").text(player2Name);
     $("#playerInfo").hide();
-    console.log(player1, player2)
+    console.log(player1)
+    console.log(player2)
 
   });
   $("#roll").click(function(event){
     event.preventDefault();
-    console.log(player1.roll)
+
+    $(".roll-result").text(roll)
+    $(".player1-score").text(player1.roundScore);
+    $(".player1-total").text(player1.overallScore);
   })
 
 });
