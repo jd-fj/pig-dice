@@ -6,17 +6,24 @@ function Player (name, roll, roundScore, overallScore) {
   this.overallScore = 0;
 }
 
-Player.prototype.roll = function () {
-  let dice = (Math.floor(Math.random() * 7));
-  this.roll = dice;
-  if (this.)
-  
-
+Player.prototype.roll = function() {
+  let dice = Math.floor((Math.random() * 7));
+  this.roll = this.roll + dice;
+  // if (this.roll === 1) {
+  //   this.roundScore = 0;
+  // } else {
+  //   this.roundScore += this.roll;
+  // }
 }
+
+// this one works
+// function rollDice () {
+//   let dice = Math.floor((Math.random() * 7));
+//   return dice;}
 
 //User Interface Logic
 $(document).ready(function() {
-//function for name submission
+  //function for name submission
   $("form#playerInfo").submit(function(event) {
     event.preventDefault();
     
@@ -28,9 +35,11 @@ $(document).ready(function() {
     $(".player2Output").text(player2Name);
     $("#playerInfo").hide();
     console.log(player1, player2)
+
   });
   $("#roll").click(function(event){
-    console.log(roll)
+    event.preventDefault();
+    console.log(player1.roll)
   })
 
 });
